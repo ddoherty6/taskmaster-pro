@@ -119,22 +119,22 @@ $(".list-group").on("blur", "input[type='text']", function() {
     .attr("id")
     .replace("list-", "");
 
-    // get the task's position in the list of other li elements
-    var index = $(this)
-      .closest(".list-group-item")
-      .index();
+  // get the task's position in the list of other li elements
+  var index = $(this)
+    .closest(".list-group-item")
+    .index();
 
-    // update task in array and re-save to localstorage
-    tasks[status][index].date = date;
-    saveTasks();
+  // update task in array and re-save to localstorage
+  tasks[status][index].date = date;
+  saveTasks();
 
-    // recreate span element with bootstrap classes
-    var taskSpan = $("<span>")
-      .addClass("badge badge-primary badge-pill")
-      .text(date);
+  // recreate span element with bootstrap classes
+  var taskSpan = $("<span>")
+    .addClass("badge badge-primary badge-pill")
+    .text(date);
 
-    // replace input with span element
-    $(this).replaceWith(taskSpan);
+  // replace input with span element
+  $(this).replaceWith(taskSpan);
 });
 
 
